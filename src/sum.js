@@ -1,35 +1,41 @@
-const readlineSync = require("readline-sync");
+const readlineSync = require("readline-sync");``
 
-let lowerBound = 1000000
-let upperBound = 999999
-
-while (lowerBound > upperBound) {
-  lowerBound = Number(readlineSync.question("Lower bound: "));
-  upperBound = Number(readlineSync.question("Upper bound: "));
-}
 
 const MIN = Number.MIN_SAFE_INTEGER
 const MAX = Number.MAX_SAFE_INTEGER
 
-if (lowerBound > upperBound) {
-  console.log("\nInvalid.")
-}
-
-else if (lowerBound < MIN || upperBound < MIN) {
-  console.log("\nInvalid.")
-}
-
-else if (lowerBound > MAX || upperBound > MAX) {
-  console.log("\nInvalid.")
-}
-
-else if (Number.isInteger(lowerBound) != "true" || Number.isInteger(upperBound) != "true") {
-  console.log("\nInvalid.")
-}
-
-else {
+let endLoop =  false
+let lowerBound = 1
+let upperBound = 0
 
 
+  console.log();
+//loop will keep going if any invalid stuff is inputted
+while (endLoop === false) {
+
+  const lowerBound = Number(readlineSync.question("Lower bound: "));
+  const upperBound = Number(readlineSync.question("Upper bound: "));
 
 
+  if (Number.isNaN(upperBound) || Number.isNaN(lowerBound)) {
+  }
+
+  else if (lowerBound == "" || upperBound == "") {
+  }
+
+  else if (lowerBound % 1 !== 0 || upperBound % 1 !== 0) {
+  }
+
+  else if (lowerBound < MIN || upperBound < MIN) {
+  }
+
+  else if (lowerBound > MAX || upperBound > MAX) {
+  }
+
+  else if (lowerBound >= upperBound) {
+  }
+
+  else {
+    endLoop = true;
+  }
 }
