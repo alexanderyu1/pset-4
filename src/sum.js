@@ -13,8 +13,8 @@ let upperBound = 0
 //loop will keep going if any invalid stuff is inputted
 while (endLoop === false) {
 
-  const lowerBound = Number(readlineSync.question("Lower bound: "));
-  const upperBound = Number(readlineSync.question("Upper bound: "));
+  lowerBound = Number(readlineSync.question("Lower bound: "));
+  upperBound = Number(readlineSync.question("Upper bound: "));
 
 
   if (Number.isNaN(upperBound) || Number.isNaN(lowerBound)) {
@@ -29,7 +29,7 @@ while (endLoop === false) {
   else if (lowerBound > MAX || upperBound > MAX) {
   }
 
-  else if (lowerBound >= upperBound) {
+  else if (lowerBound > upperBound) {
   }
 
   else {
@@ -37,28 +37,17 @@ while (endLoop === false) {
   }
 }
 
-let lowerboundEven = null;
-let upperboundEven = null;
 
-if (lowerBound % 2 === 0) {
-  lowerboundEven = lowerBound
+if (lowerBound % 2 == 0) {
+  sum = lowerBound
 }
 
 else {
-  lowerboundEven = lowerBound + 1
+  sum = lowerBound + 1
 }
 
-if (upperBound % 2 === 0) {
-  upperboundEven = upperBound
+for (let i = Math.ceil((upperBound - lowerBound) / 2); i > 1; i--) {
+    sum = Number(sum) + Number((lowerBound%2==0)? lowerBound = Number(lowerBound)+2 : lowerBound = Number(lowerBound)+3);
 }
 
-else {
-  upperboundEven = upperBound - 1
-}
-
-//basically just the equation for sum of all consecutive numbers but modified ((n / 2)(first number + last number) = sum)
-
-const evenNumbers = ((upperboundEven - lowerboundEven) / 2) + 1 ;//number of integers
-const sum = ((evenNumbers / 2) * (upperboundEven + lowerboundEven));
-
-console.log("\n" + sum + ".");
+console.log("\n" + sum.toLocaleString() + ".");
