@@ -9,7 +9,7 @@ let lowerBound = 1
 let upperBound = 0
 
 
-  console.log();
+console.log();
 //loop will keep going if any invalid stuff is inputted
 while (endLoop === false) {
 
@@ -36,8 +36,7 @@ while (endLoop === false) {
     endLoop = true;
   }
 }
-
-
+//calculate the sum
 if (lowerBound % 2 == 0) {
   sum = lowerBound
 }
