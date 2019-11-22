@@ -1,4 +1,4 @@
-const readlineSync = require("readline-sync");``
+const readlineSync = require("readline-sync");
 
 
 const MIN = Number.MIN_SAFE_INTEGER
